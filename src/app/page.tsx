@@ -1,10 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ArrowRight, Star, Users, Zap, Shield, Mail, Phone, MapPin, CheckCircle, Instagram, CreditCard, TrendingUp, Lock, Building2, UserCheck, Menu } from "lucide-react";
+import { ArrowRight, Star, Users, Shield, CheckCircle, Instagram, CreditCard, TrendingUp, Building2, Menu } from "lucide-react";
 
 export default function Home() {
   return (
@@ -346,7 +344,7 @@ export default function Home() {
             Contact Us Today
           </h2>
           <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto px-4">
-            Ready to start your credit repair journey? Get in touch and let's discuss how we can help you achieve your financial goals.
+            Ready to start your credit repair journey? Get in touch and let&apos;s discuss how we can help you achieve your financial goals.
           </p>
         </div>
         
@@ -357,7 +355,7 @@ export default function Home() {
                 Get Your Free Consultation
               </h3>
               <p className="text-base md:text-lg text-slate-600 dark:text-slate-300 mb-8">
-                Don't wait to improve your credit score. Contact me today for a free consultation and start your journey to financial freedom.
+                Don&apos;t wait to improve your credit score. Contact me today for a free consultation and start your journey to financial freedom.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center justify-center md:justify-start space-x-4">
