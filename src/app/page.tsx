@@ -1,10 +1,19 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ArrowRight, Star, Users, Shield, CheckCircle, Instagram, CreditCard, TrendingUp, Building2, Menu } from "lucide-react";
+import { ArrowRight, Star, Users, Shield, CheckCircle, Instagram, CreditCard, TrendingUp, Building2, Menu, X, MessageCircle } from "lucide-react";
+import { useState } from "react";
 
 export default function Home() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-white to-green-50 dark:from-slate-900 dark:to-slate-800">
       {/* Navigation */}
@@ -20,20 +29,65 @@ export default function Home() {
             <a href="#services" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors">Services</a>
             <a href="#about" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors">About</a>
             <a href="#contact" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors">Contact</a>
-            <a href="http://instagram.com/kevinmontell" target="_blank" rel="noopener noreferrer">
+            <a href="http://instagram.com/kevinjmontell" target="_blank" rel="noopener noreferrer">
               <Button className="bg-green-600 hover:bg-green-700">
                 <Instagram className="mr-2 h-4 w-4" />
-                Follow @kevinmontell
+                Follow @kevinjmontell
               </Button>
             </a>
           </div>
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <Button variant="ghost" size="sm">
-              <Menu className="h-5 w-5" />
+            <Button variant="ghost" size="sm" onClick={toggleMobileMenu}>
+              {isMobileMenuOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </Button>
           </div>
         </div>
+        
+        {/* Mobile menu dropdown */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-white dark:bg-slate-900 border-t">
+            <div className="container mx-auto px-4 py-4 space-y-4">
+              <a 
+                href="#services" 
+                className="block text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Services
+              </a>
+              <a 
+                href="#about" 
+                className="block text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About
+              </a>
+              <a 
+                href="#contact" 
+                className="block text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact
+              </a>
+                             <a 
+                 href="http://instagram.com/kevinjmontell" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 className="block"
+                 onClick={() => setIsMobileMenuOpen(false)}
+               >
+                 <Button className="bg-green-600 hover:bg-green-700 w-full">
+                   <Instagram className="mr-2 h-4 w-4" />
+                   Follow @kevinjmontell
+                 </Button>
+               </a>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
@@ -58,7 +112,7 @@ export default function Home() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </a>
-          <a href="http://instagram.com/kevinmontell" target="_blank" rel="noopener noreferrer">
+          <a href="http://instagram.com/kevinjmontell" target="_blank" rel="noopener noreferrer">
             <Button variant="outline" size="lg" className="text-lg px-6 md:px-8 py-4 md:py-6 w-full sm:w-auto">
               <Instagram className="mr-2 h-5 w-5" />
               Follow on Instagram
@@ -271,10 +325,10 @@ export default function Home() {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </a>
-                <a href="http://instagram.com/kevinmontell" target="_blank" rel="noopener noreferrer">
+                <a href="http://instagram.com/kevinjmontell" target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" size="lg" className="w-full sm:w-auto">
                     <Instagram className="mr-2 h-5 w-5" />
-                    Follow @kevinmontell
+                    Follow @kevinjmontell
                   </Button>
                 </a>
               </div>
@@ -364,8 +418,19 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-semibold text-slate-900 dark:text-white">Instagram</p>
-                    <a href="http://instagram.com/kevinmontell" target="_blank" rel="noopener noreferrer" className="text-slate-600 dark:text-slate-300 hover:text-purple-600 transition-colors">
-                      @kevinmontell
+                    <a href="http://instagram.com/kevinjmontell" target="_blank" rel="noopener noreferrer" className="text-slate-600 dark:text-slate-300 hover:text-purple-600 transition-colors">
+                      @kevinjmontell
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-center justify-center md:justify-start space-x-4">
+                  <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center">
+                    <MessageCircle className="h-6 w-6 text-green-600 dark:text-green-400" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-slate-900 dark:text-white">WhatsApp</p>
+                    <a href="https://wa.me/584242588431" target="_blank" rel="noopener noreferrer" className="text-slate-600 dark:text-slate-300 hover:text-green-600 transition-colors">
+                      +58 424 258 8431
                     </a>
                   </div>
                 </div>
@@ -376,19 +441,25 @@ export default function Home() {
               <CardHeader className="text-center">
                 <CardTitle className="text-xl md:text-2xl">Ready to Get Started?</CardTitle>
                 <CardDescription className="text-base md:text-lg">
-                  Message me on Instagram for a free consultation
+                  Choose your preferred way to contact me for a free consultation
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <a href="http://instagram.com/kevinmontell" target="_blank" rel="noopener noreferrer" className="block">
+                <a href="http://instagram.com/kevinjmontell" target="_blank" rel="noopener noreferrer" className="block">
                   <Button className="w-full bg-purple-600 hover:bg-purple-700 text-lg py-6">
                     <Instagram className="mr-2 h-5 w-5" />
                     Message on Instagram
                   </Button>
                 </a>
+                <a href="https://wa.me/584242588431" target="_blank" rel="noopener noreferrer" className="block">
+                  <Button className="w-full bg-green-600 hover:bg-green-700 text-lg py-6">
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Chat on WhatsApp
+                  </Button>
+                </a>
                 <div className="text-center text-sm text-slate-500 dark:text-slate-400 mt-4 space-y-1">
                   <p>✨ Free consultation available</p>
-                  <p>📱 Quick response on Instagram</p>
+                  <p>📱 Quick response on WhatsApp & Instagram</p>
                   <p>💼 Professional service guaranteed</p>
                 </div>
               </CardContent>
@@ -412,8 +483,11 @@ export default function Home() {
                 Professional credit repair and financial services to help you build, rebuild, and repair your credit for a better financial future.
               </p>
               <div className="flex space-x-4">
-                <a href="http://instagram.com/kevinmontell" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
+                <a href="http://instagram.com/kevinjmontell" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
                   <Instagram className="h-5 w-5" />
+                </a>
+                <a href="https://wa.me/584242588431" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
+                  <MessageCircle className="h-5 w-5" />
                 </a>
               </div>
             </div>
@@ -431,13 +505,14 @@ export default function Home() {
               <ul className="space-y-2 text-slate-400 text-sm md:text-base">
                 <li><a href="#about" className="hover:text-white transition-colors">About Kevin</a></li>
                 <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
-                <li><a href="http://instagram.com/kevinmontell" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a></li>
+                <li><a href="http://instagram.com/kevinjmontell" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-slate-400 text-sm md:text-base">
-                <li><a href="http://instagram.com/kevinmontell" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Follow on Instagram</a></li>
+                <li><a href="http://instagram.com/kevinjmontell" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Follow on Instagram</a></li>
+                <li><a href="https://wa.me/584242588431" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Chat on WhatsApp</a></li>
               </ul>
             </div>
           </div>
@@ -447,8 +522,8 @@ export default function Home() {
               © 2024 Kevin Montell - Asesor Financiero. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="http://instagram.com/kevinmontell" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors text-sm md:text-base">
-                Follow @kevinmontell
+              <a href="http://instagram.com/kevinjmontell" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors text-sm md:text-base">
+                Follow @kevinjmontell
               </a>
             </div>
           </div>
