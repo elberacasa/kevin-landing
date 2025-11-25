@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ArrowRight, Star, Users, Shield, CheckCircle, Instagram, CreditCard, TrendingUp, Building2, Menu, X, MessageCircle } from "lucide-react";
+import { ArrowRight, Star, Users, Shield, CheckCircle, Instagram, CreditCard, TrendingUp, Building2, Menu, X, MessageCircle, Briefcase, FileText } from "lucide-react";
 import { useState } from "react";
 
 export default function Home() {
@@ -241,7 +241,7 @@ export default function Home() {
         </div>
 
         {/* Additional Services */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-8 md:mt-12 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-8 md:mt-12 max-w-6xl mx-auto">
           <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
             <CardHeader>
               <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center mb-4">
@@ -293,6 +293,62 @@ export default function Home() {
                 <li className="flex items-center space-x-2">
                   <CheckCircle className="h-4 w-4 text-green-600 flex-shrink-0" />
                   <span className="text-sm">Credit utilization strategies</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+            <CardHeader>
+              <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center mb-4">
+                <Briefcase className="h-6 w-6 text-indigo-600 dark:text-indigo-400" />
+              </div>
+              <CardTitle className="text-lg md:text-xl">Company Formation</CardTitle>
+              <CardDescription className="text-sm md:text-base">
+                Complete company formation services - create your business from scratch with professional guidance and support.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2">
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="h-4 w-4 text-green-600 flex-shrink-0" />
+                  <span className="text-sm">Create company from scratch</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="h-4 w-4 text-green-600 flex-shrink-0" />
+                  <span className="text-sm">Business registration assistance</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="h-4 w-4 text-green-600 flex-shrink-0" />
+                  <span className="text-sm">Legal documentation support</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+            <CardHeader>
+              <div className="w-12 h-12 bg-teal-100 dark:bg-teal-900 rounded-lg flex items-center justify-center mb-4">
+                <FileText className="h-6 w-6 text-teal-600 dark:text-teal-400" />
+              </div>
+              <CardTitle className="text-lg md:text-xl">ITIN Services</CardTitle>
+              <CardDescription className="text-sm md:text-base">
+                Professional ITIN (Individual Taxpayer Identification Number) application and processing assistance with Kevin.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2">
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="h-4 w-4 text-green-600 flex-shrink-0" />
+                  <span className="text-sm">ITIN application assistance</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="h-4 w-4 text-green-600 flex-shrink-0" />
+                  <span className="text-sm">Document preparation</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="h-4 w-4 text-green-600 flex-shrink-0" />
+                  <span className="text-sm">Application processing support</span>
                 </li>
               </ul>
             </CardContent>
@@ -498,6 +554,8 @@ export default function Home() {
                 <li><a href="#services" className="hover:text-white transition-colors">Dispute Resolution</a></li>
                 <li><a href="#services" className="hover:text-white transition-colors">Credit Counseling</a></li>
                 <li><a href="#services" className="hover:text-white transition-colors">Account Creation</a></li>
+                <li><a href="#services" className="hover:text-white transition-colors">Company Formation</a></li>
+                <li><a href="#services" className="hover:text-white transition-colors">ITIN Services</a></li>
               </ul>
             </div>
             <div>
